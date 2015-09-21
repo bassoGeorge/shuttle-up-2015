@@ -1,6 +1,6 @@
 angular.module('shuttleApp',
   [
-    'ui.bootstrap', 'ui.router',
+    'ui.bootstrap', 'ui.router', 'ngAside',
     'shuttleApp.controllers'
   ]
 ).config ($stateProvider) ->

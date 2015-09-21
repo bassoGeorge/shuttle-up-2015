@@ -9,8 +9,10 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-aside/dist/js/angular-aside.min.js"></script>
     <!-- Library stylesheets-->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-aside/dist/css/angular-aside.min.css">
     <!-- CDN stylesheets and scripts-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Local files-->
@@ -18,7 +20,10 @@
     <script src="js/controllers/main.js"></script>
     <script src="js/controllers/test.js"></script>
   </head>
-  <body ng-app="shuttleApp">
+  <body ng-app="shuttleApp" ng-controller="MainController" class="p-t-lg">
+    <div class="navbar navbar-light bg-inverse navbar-fixed-top">
+      <button ng-click="sideMenu()" class="navbar-toggler"><i class="fa fa-bars"></i></button>
+    </div>
     <div class="jumbotron jumbotron-fluid text-center">
       <h2 class="text-muted">St. Luke's Youth Group presents</h2>
       <h1 class="display-4">Shuttle Up 2015</h1>

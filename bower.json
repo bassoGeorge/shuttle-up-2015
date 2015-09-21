@@ -17,8 +17,10 @@
   ],
   "dependencies": {
     "angular": "1.4.6",
+    "angular-aside": "~1.2.0",
     "angular-bootstrap": "~0.13.4",
     "angular-ui-router": "~0.2.15",
-    "bootstrap": "4.0.0-alpha"
+    "bootstrap": "4.0.0-alpha",
+    "underscore": "~1.8.3"
   }
 }
