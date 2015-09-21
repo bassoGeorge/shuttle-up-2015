@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Shuttle Up 2015
+
+    // Library scripts
+    - var files1 = ['jquery/dist/jquery.min', 'bootstrap/dist/js/bootstrap.min']
+
+    - var files = files1
+    each file in files
+      script(src='bower_components/'+file+'.js')
+
+    // Library stylesheets
+    - var css_files = ['bootstrap/dist/css/bootstrap.min']
+    each file in css_files
+      link(rel='stylesheet' href='bower_components/'+file+'.css')
+
+    // CDN stylesheets and scripts
+    link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+
+  body
+    .jumbotron.jumbotron-fluid.text-center
+      h2.text-muted St. Luke's Youth Group presents
+      h1.display-4 Shuttle Up 2015
+      hr.jumbotron-hr
+      p.lead.text-warning
+        i.fa.fa-exclamation-triangle
+        | &nbspThis site is a work in progress

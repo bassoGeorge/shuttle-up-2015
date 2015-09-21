@@ -1,0 +1,21 @@
+{
+  "name": "shuttle-up-2015",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bassoGeorge/shuttle-up-2015",
+  "authors": [
+    "bassoGeorge <anishgeorgehb@gmail.com>"
+  ],
+  "description": "Event website for ShuttleUp 2015",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha"
+  }
+}
