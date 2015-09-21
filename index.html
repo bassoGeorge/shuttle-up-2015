@@ -6,17 +6,27 @@
     <!-- Library scripts-->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <!-- Library stylesheets-->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- CDN stylesheets and scripts-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Local files-->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/test.js"></script>
   </head>
-  <body>
+  <body ng-app="shuttleApp">
     <div class="jumbotron jumbotron-fluid text-center">
       <h2 class="text-muted">St. Luke's Youth Group presents</h2>
       <h1 class="display-4">Shuttle Up 2015</h1>
       <hr class="jumbotron-hr">
       <p class="lead text-warning"><i class="fa fa-exclamation-triangle"></i>&nbspThis site is a work in progress</p>
+    </div>
+    <div class="container">
+      <ui-view></ui-view>
     </div>
   </body>
 </html>

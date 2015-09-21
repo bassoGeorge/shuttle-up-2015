@@ -6,8 +6,9 @@ html
 
     // Library scripts
     - var files1 = ['jquery/dist/jquery.min', 'bootstrap/dist/js/bootstrap.min']
-
-    - var files = files1
+    - var files2 = ['angular/angular.min', 'angular-ui-router/release/angular-ui-router.min']
+    - var files3 = ['angular-bootstrap/ui-bootstrap-tpls.min']
+    - var files = files1.concat(files2, files3)
     each file in files
       script(src='bower_components/'+file+'.js')
 
@@ -19,7 +20,18 @@ html
     // CDN stylesheets and scripts
     link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 
-  body
+    // Local files
+    - var core = ['app']
+
+    - var controllers = ['main', 'test']
+    - controllers.forEach( function(v,i,arr) { arr[i] = 'controllers/' + v })
+
+    - var local = core.concat(controllers)
+
+    each file in local
+      script(src='js/'+file+'.js')
+
+  body(ng-app='shuttleApp')
     .jumbotron.jumbotron-fluid.text-center
       h2.text-muted St. Luke's Youth Group presents
       h1.display-4 Shuttle Up 2015
@@ -27,3 +39,6 @@ html
       p.lead.text-warning
         i.fa.fa-exclamation-triangle
         | &nbspThis site is a work in progress
+
+    .container
+      ui-view
