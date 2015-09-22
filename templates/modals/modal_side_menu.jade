@@ -1,6 +1,10 @@
 .modal-header
   button.close(ng-click='$dismiss()')
-    i.fa.fa-times
-  h4.modal-title Shuttle Up 2015
+    span &times
+  h5.modal-title Administration Menu
 .modal-body
-  p More content to come
+  ul.nav.nav-pills.nav-stacked
+    li.nav-item(ng-click='$dismiss()')
+      a.nav-link Admin Item 1
+    li.nav-item(ng-click='$dismiss()')
+      a.nav-link Admin Item 2
