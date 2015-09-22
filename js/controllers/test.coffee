@@ -1,5 +1,5 @@
 angular.module 'shuttleApp.controllers'
-.controller 'TestController', ($scope, $modal, $aside) ->
+.controller 'TestController', ($scope, $modal, $aside, toastr) ->
   $scope.openModal = () ->
     $modal.open(
       templateUrl: 'templates/modals/modal_test.html'
@@ -11,3 +11,6 @@ angular.module 'shuttleApp.controllers'
       placement: 'left'
       size: 'sm'
     })
+
+  $scope.toast = () ->
+    toastr.success("Yes, we have done it!!!")
