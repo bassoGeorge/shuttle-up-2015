@@ -8,7 +8,7 @@
         size: 'sm'
       });
     };
-    return $scope.isLoggedIn = true;
+    return $scope.isLoggedIn = false;
   });
 
 }).call(this);
