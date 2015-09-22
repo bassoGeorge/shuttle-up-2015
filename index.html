@@ -16,13 +16,14 @@
     <!-- CDN stylesheets and scripts-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Local files-->
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js"></script>
     <script src="js/controllers/main.js"></script>
     <script src="js/controllers/test.js"></script>
   </head>
-  <body ng-app="shuttleApp" ng-controller="MainController" class="p-t-lg">
-    <div class="navbar navbar-light bg-inverse navbar-fixed-top">
-      <button ng-click="sideMenu()" class="navbar-toggler"><i class="fa fa-bars"></i></button>
+  <body ng-app="shuttleApp" ng-controller="MainController" ng-class="{'p-t-lg': isLoggedIn}">
+    <div ng-if="isLoggedIn" class="navbar navbar-dark bg-inverse navbar-fixed-top text-center">
+      <button ng-click="openSideMenu()" class="navbar-toggler pull-left"><i class="fa fa-bars"></i></button><a class="navbar-brand">Shuttle Up administrator</a>
     </div>
     <div class="jumbotron jumbotron-fluid text-center">
       <h2 class="text-muted">St. Luke's Youth Group presents</h2>
