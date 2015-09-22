@@ -1,5 +1,5 @@
 angular.module 'shuttleApp.controllers', []
-.controller 'MainController', ($scope, $aside) ->
+.controller 'MainController', ($scope, $aside, $state) ->
 
   # Simple function to open the side menu
   $scope.openSideMenu = () ->
@@ -10,3 +10,6 @@ angular.module 'shuttleApp.controllers', []
     )
 
   $scope.isLoggedIn = false
+
+  $scope.isState = (st) ->
+    $state.is(st)

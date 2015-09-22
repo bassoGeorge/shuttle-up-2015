@@ -19,5 +19,15 @@ angular.module('shuttleApp',
     templateUrl: 'templates/views/view_test.html'
     controller: 'TestController'
     url: '/test'
+  ).state('home',
+    templateUrl: 'templates/views/view_home.html'
+    controller: 'HomeViewController'
+    abstract: true
+  ).state('home.about',
+    templateUrl: 'templates/views/view_home_about.html'
+  ).state('home.rules',
+    templateUrl: 'templates/views/view_home_rules.html'
   )
+.run ($state) ->
+  $state.go 'home.rules'
 
