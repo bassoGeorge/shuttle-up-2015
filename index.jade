@@ -6,14 +6,14 @@ html
 
     // Library scripts
     - var files1 = ['jquery/dist/jquery.min', 'bootstrap/dist/js/bootstrap.min']
-    - var files2 = ['angular/angular.min', 'angular-ui-router/release/angular-ui-router.min']
-    - var files3 = ['angular-bootstrap/ui-bootstrap-tpls.min', 'angular-aside/dist/js/angular-aside.min' ]
+    - var files2 = ['angular/angular.min', 'angular-ui-router/release/angular-ui-router.min', 'angular-animate/angular-animate.min']
+    - var files3 = ['angular-bootstrap/ui-bootstrap-tpls.min', 'angular-aside/dist/js/angular-aside.min', 'angular-toastr/dist/angular-toastr.tpls.min']
     - var files = files1.concat(files2, files3)
     each file in files
       script(src='bower_components/'+file+'.js')
 
     // Library stylesheets
-    - var css_files = ['bootstrap/dist/css/bootstrap.min', 'angular-aside/dist/css/angular-aside.min']
+    - var css_files = ['bootstrap/dist/css/bootstrap.min', 'angular-aside/dist/css/angular-aside.min', 'angular-toastr/dist/angular-toastr.min']
     each file in css_files
       link(rel='stylesheet' href='bower_components/'+file+'.css')
 
