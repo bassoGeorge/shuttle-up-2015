@@ -2,12 +2,12 @@
   ul.nav.nav-tabs
     li.nav-item
       a.nav-link(
-        ng-class="{active: isState('home.about')}"
+        ng-class="('home.about' | isState) ? 'active': ' '"
         ui-sref='home.about'
       ) About
     li.nav-item
       a.nav-link(
-        ng-class="{active: isState('home.rules')}"
+        ng-class="('home.rules' | isState) ? 'active': ' '"
         ui-sref='home.rules'
       ) Rules and Regulations
 

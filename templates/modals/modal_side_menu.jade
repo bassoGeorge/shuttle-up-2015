@@ -4,7 +4,12 @@
   h5.modal-title Administration Menu
 .modal-body
   ul.nav.nav-pills.nav-stacked
-    li.nav-item(ng-click='$dismiss()')
-      a.nav-link Admin Item 1
-    li.nav-item(ng-click='$dismiss()')
-      a.nav-link Admin Item 2
+    li.nav-item(
+      ng-repeat='route in routes'
+      ng-click='$dismiss()'
+      ui-sref='{{ route[2] }}'
+    )
+      // ng-class='{active: isState(route[1])}'
+      a.nav-link(
+        ng-class="(route[1] | includedByState) ? 'active': ' '"
+       ) {{ route[0] }}

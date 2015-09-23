@@ -7,10 +7,14 @@ angular.module 'shuttleApp.controllers', []
       templateUrl: 'templates/modals/modal_side_menu.html'
       placement: 'left'
       size: 'sm'
+      controller: 'SideMenuController'
     )
 
   $scope.auth =
-    isLoggedIn: false
+    isLoggedIn: true
 
-  $scope.isState = (st) ->
-    $state.includes(st)
+.controller 'SideMenuController', ($scope) ->
+  $scope.routes = [
+    ['Home', 'home', 'home.about'],
+    ['Registration', 'register', 'register']
+  ]

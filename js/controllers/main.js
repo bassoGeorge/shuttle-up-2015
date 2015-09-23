@@ -5,15 +5,15 @@
       return $aside.open({
         templateUrl: 'templates/modals/modal_side_menu.html',
         placement: 'left',
-        size: 'sm'
+        size: 'sm',
+        controller: 'SideMenuController'
       });
     };
-    $scope.auth = {
-      isLoggedIn: false
+    return $scope.auth = {
+      isLoggedIn: true
     };
-    return $scope.isState = function(st) {
-      return $state.includes(st);
-    };
+  }).controller('SideMenuController', function($scope) {
+    return $scope.routes = [['Home', 'home', 'home.about'], ['Registration', 'register', 'register']];
   });
 
 }).call(this);

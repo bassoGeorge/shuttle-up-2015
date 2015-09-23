@@ -5,7 +5,8 @@
 </div>
 <div class="modal-body">
   <ul class="nav nav-pills nav-stacked">
-    <li ng-click="$dismiss()" class="nav-item"><a class="nav-link">Admin Item 1</a></li>
-    <li ng-click="$dismiss()" class="nav-item"><a class="nav-link">Admin Item 2</a></li>
+    <li ng-repeat="route in routes" ng-click="$dismiss()" ui-sref="{{ route[2] }}" class="nav-item">
+      <!-- ng-class='{active: isState(route[1])}'--><a ng-class="(route[1] | includedByState) ? 'active': ' '" class="nav-link">{{ route[0] }}</a>
+    </li>
   </ul>
 </div>
