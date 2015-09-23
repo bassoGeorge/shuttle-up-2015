@@ -13,5 +13,6 @@ angular.module 'shuttleApp.controllers'
         $scope.auth.isLoggedIn = true
         saHttp.setApiKey(d.data)
         $state.go 'home.about'
+        toastr.success("Welcome #{$scope.auth.username}. You are successfully logged in as Administrator")
       else
         toastr.error(d.reason || d.error)

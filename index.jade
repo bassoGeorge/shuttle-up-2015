@@ -49,8 +49,10 @@ html
         button.navbar-toggler.pull-left(ng-click='openSideMenu()')
           i.fa.fa-bars
         ul.nav.navbar-nav.pull-right
-          li.nav-item
-            span.nav-link Logged in as {{ auth.username }}
+          li.nav-item.dropdown
+            span.nav-link.dropdown-toggle(data-toggle="dropdown") Logged in as {{ auth.username }}
+            .dropdown-menu
+              a.dropdown-item(ng-click='logout()') Logout
 
       .jumbotron.jumbotron-fluid.text-center
         h4.text-muted St. Luke's Youth Group presents

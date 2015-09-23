@@ -1,5 +1,5 @@
 angular.module 'shuttleApp.controllers', []
-.controller 'MainController', ($scope, $aside, $state) ->
+.controller 'MainController', ($scope, $aside, $state, saHttp, toastr) ->
 
   # Simple function to open the side menu
   $scope.openSideMenu = () ->
@@ -11,7 +11,13 @@ angular.module 'shuttleApp.controllers', []
     )
 
   $scope.auth =
-    isLoggedIn: true
+    isLoggedIn: false
+
+  $scope.logout = () ->
+    $scope.auth.username = ''
+    $scope.auth.isLoggedIn = false
+    saHttp.setApiKey('')
+    toastr.info("Logged out successfully")
 
 .controller 'SideMenuController', ($scope) ->
   $scope.routes = [

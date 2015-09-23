@@ -35,7 +35,9 @@
       <div ng-if="auth.isLoggedIn" class="navbar navbar-dark bg-inverse navbar-fixed-top text-center">
         <button ng-click="openSideMenu()" class="navbar-toggler pull-left"><i class="fa fa-bars"></i></button>
         <ul class="nav navbar-nav pull-right">
-          <li class="nav-item"><span class="nav-link">Logged in as {{ auth.username }}</span></li>
+          <li class="nav-item dropdown"><span data-toggle="dropdown" class="nav-link dropdown-toggle">Logged in as {{ auth.username }}</span>
+            <div class="dropdown-menu"><a ng-click="logout()" class="dropdown-item">Logout</a></div>
+          </li>
         </ul>
       </div>
       <div class="jumbotron jumbotron-fluid text-center">

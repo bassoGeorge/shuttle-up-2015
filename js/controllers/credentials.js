@@ -12,7 +12,8 @@
         if (d.success) {
           $scope.auth.isLoggedIn = true;
           saHttp.setApiKey(d.data);
-          return $state.go('home.about');
+          $state.go('home.about');
+          return toastr.success("Welcome " + $scope.auth.username + ". You are successfully logged in as Administrator");
         } else {
           return toastr.error(d.reason || d.error);
         }

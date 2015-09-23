@@ -27,12 +27,14 @@ angular.module('shuttleApp',
     templateUrl: 'templates/views/view_home.html'
     controller: 'HomeViewController'
     abstract: true
+    url: '/home'
   ).state('home.about',
     templateUrl: 'templates/views/view_home_about.html'
   ).state('home.rules',
     templateUrl: 'templates/views/view_home_rules.html'
   ).state('register',
     templateUrl: 'templates/views/view_register.html'
+    url: '/register'
   ).state('login',
     templateUrl: 'templates/views/view_login.html'
     controller: 'LoginController'
