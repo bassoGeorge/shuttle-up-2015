@@ -13,6 +13,7 @@ angular.module 'shuttleApp.services', []
 
   $get: () ->
     return {
+      echo: host
       login: host+"login"
     }
 )

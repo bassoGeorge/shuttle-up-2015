@@ -23,6 +23,8 @@
       templateUrl: 'templates/views/view_home_rules.html'
     }).state('register', {
       templateUrl: 'templates/views/view_register.html'
+    }).state('login', {
+      templateUrl: 'templates/views/view_login.html'
     });
   }).run(function($state) {
     return $state.go('home.rules');

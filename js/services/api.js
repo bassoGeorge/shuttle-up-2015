@@ -15,6 +15,7 @@
       },
       $get: function() {
         return {
+          echo: host,
           login: host + "login"
         };
       }
