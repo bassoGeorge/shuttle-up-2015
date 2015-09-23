@@ -1,5 +1,5 @@
 angular.module 'shuttleApp.controllers'
-.controller 'TestController', ($scope, $modal, $aside, toastr, $log, saApiEndpoints) ->
+.controller 'TestController', ($scope, $modal, $aside, toastr, $log, saApiEndpoints, saEncPass) ->
   $scope.openModal = () ->
     $modal.open(
       templateUrl: 'templates/modals/modal_test.html'
@@ -16,4 +16,4 @@ angular.module 'shuttleApp.controllers'
     toastr.success("Yes, we have done it!!!")
 
 
-  $log.debug "Login api: "+saApiEndpoints.login
+  # $log.debug "password encrypt: "+saEncPass('password')
