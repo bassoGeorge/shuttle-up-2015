@@ -13,8 +13,11 @@
         size: 'sm'
       });
     };
-    return $scope.toast = function() {
+    $scope.toast = function() {
       return toastr.success("Yes, we have done it!!!");
+    };
+    return $scope.toggleLogin = function() {
+      return $scope.auth.isLoggedIn = !$scope.auth.isLoggedIn;
     };
 
     /*

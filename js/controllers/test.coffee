@@ -16,6 +16,9 @@ angular.module 'shuttleApp.controllers'
 
   $scope.toast = () ->
     toastr.success("Yes, we have done it!!!")
+
+  $scope.toggleLogin = () ->
+    $scope.auth.isLoggedIn = not $scope.auth.isLoggedIn
   ###
   testData = {username: "anish", password: 'something'}
   saHttp.post(saApiEndpoints.echo, testData)

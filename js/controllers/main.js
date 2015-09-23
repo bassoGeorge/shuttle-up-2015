@@ -8,7 +8,9 @@
         size: 'sm'
       });
     };
-    $scope.isLoggedIn = true;
+    $scope.auth = {
+      isLoggedIn: true
+    };
     return $scope.isState = function(st) {
       return $state.includes(st);
     };

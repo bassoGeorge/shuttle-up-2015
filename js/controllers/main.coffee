@@ -9,7 +9,8 @@ angular.module 'shuttleApp.controllers', []
       size: 'sm'
     )
 
-  $scope.isLoggedIn = true
+  $scope.auth =
+    isLoggedIn: true
 
   $scope.isState = (st) ->
     $state.includes(st)
