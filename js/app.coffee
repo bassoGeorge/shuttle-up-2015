@@ -5,7 +5,7 @@ angular.module('shuttleApp',
   ]
 ).config ($stateProvider, toastrConfig, saApiEndpointsProvider) ->
   # Configure local or external api
-  saApiEndpointsProvider.useLocalHost(true)
+  # saApiEndpointsProvider.useLocalHost(true)
 
   # Configure the global toastr defaults
   angular.extend(toastrConfig,
@@ -35,6 +35,8 @@ angular.module('shuttleApp',
     templateUrl: 'templates/views/view_register.html'
   ).state('login',
     templateUrl: 'templates/views/view_login.html'
+    controller: 'LoginController'
+    url: '/login'
   )
 .run ($state) ->
   $state.go 'home.rules'

@@ -24,6 +24,7 @@
     <script src="js/controllers/main.js" defer></script>
     <script src="js/controllers/test.js" defer></script>
     <script src="js/controllers/home.js" defer></script>
+    <script src="js/controllers/credentials.js" defer></script>
     <script src="js/services/api.js" defer></script>
     <script src="js/services/misc.js" defer></script>
     <script src="js/services/http.js" defer></script>
@@ -34,7 +35,7 @@
       <div ng-if="auth.isLoggedIn" class="navbar navbar-dark bg-inverse navbar-fixed-top text-center">
         <button ng-click="openSideMenu()" class="navbar-toggler pull-left"><i class="fa fa-bars"></i></button>
         <ul class="nav navbar-nav pull-right">
-          <li class="nav-item"><span class="nav-link">Logged in as {{ username }}</span></li>
+          <li class="nav-item"><span class="nav-link">Logged in as {{ auth.username }}</span></li>
         </ul>
       </div>
       <div class="jumbotron jumbotron-fluid text-center">

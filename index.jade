@@ -28,7 +28,7 @@ html
     // Local files
     - var core = ['app']
 
-    - var controllers = ['main', 'test', 'home']
+    - var controllers = ['main', 'test', 'home', 'credentials']
     - controllers.forEach( function(v,i,arr) { arr[i] = 'controllers/' + v })
 
     - var services = ['api', 'misc', 'http']
@@ -50,7 +50,7 @@ html
           i.fa.fa-bars
         ul.nav.navbar-nav.pull-right
           li.nav-item
-            span.nav-link Logged in as {{ username }}
+            span.nav-link Logged in as {{ auth.username }}
 
       .jumbotron.jumbotron-fluid.text-center
         h4.text-muted St. Luke's Youth Group presents

@@ -9,7 +9,7 @@
       });
     };
     $scope.auth = {
-      isLoggedIn: true
+      isLoggedIn: false
     };
     return $scope.isState = function(st) {
       return $state.includes(st);
