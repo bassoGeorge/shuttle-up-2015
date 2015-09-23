@@ -9,7 +9,7 @@ angular.module 'shuttleApp.controllers', []
       size: 'sm'
     )
 
-  $scope.isLoggedIn = false
+  $scope.isLoggedIn = true
 
   $scope.isState = (st) ->
     $state.is(st)
