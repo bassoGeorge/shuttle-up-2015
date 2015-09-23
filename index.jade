@@ -52,6 +52,8 @@ html
           | &nbspThis site is a work in progress&nbsp
           i.fa.fa-exclamation-triangle
 
+        button.btn.btn-primary(ng-if='isState("home")' ui-sref='register') Register Now
+
       .container
         ui-view
 

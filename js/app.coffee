@@ -27,6 +27,8 @@ angular.module('shuttleApp',
     templateUrl: 'templates/views/view_home_about.html'
   ).state('home.rules',
     templateUrl: 'templates/views/view_home_rules.html'
+  ).state('register',
+    templateUrl: 'templates/views/view_register.html'
   )
 .run ($state) ->
   $state.go 'home.rules'

@@ -10,7 +10,7 @@
     };
     $scope.isLoggedIn = true;
     return $scope.isState = function(st) {
-      return $state.is(st);
+      return $state.includes(st);
     };
   });
 
