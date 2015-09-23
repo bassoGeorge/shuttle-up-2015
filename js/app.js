@@ -5,9 +5,9 @@
     angular.extend(toastrConfig, {
       autoDismiss: true,
       maxOpened: 1,
-      positionClass: 'toast-bottom-full-width',
-      timeOut: 3000,
-      extendedTimeOut: 1000
+      positionClass: 'toast-top-right',
+      timeOut: 2000,
+      extendedTimeOut: 0
     });
     return $stateProvider.state('test', {
       templateUrl: 'templates/views/view_test.html',

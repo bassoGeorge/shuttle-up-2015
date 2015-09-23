@@ -48,7 +48,9 @@ html
       .navbar.navbar-dark.bg-inverse.navbar-fixed-top.text-center(ng-if='isLoggedIn')
         button.navbar-toggler.pull-left(ng-click='openSideMenu()')
           i.fa.fa-bars
-        a.navbar-brand Shuttle Up administrator
+        ul.nav.navbar-nav.pull-right
+          li.nav-item
+            span.nav-link Logged in as {{ username }}
 
       .jumbotron.jumbotron-fluid.text-center
         h4.text-muted St. Luke's Youth Group presents

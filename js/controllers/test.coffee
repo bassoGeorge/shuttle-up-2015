@@ -16,5 +16,10 @@ angular.module 'shuttleApp.controllers'
 
   $scope.toast = () ->
     toastr.success("Yes, we have done it!!!")
-
+  ###
   testData = {username: "anish", password: 'something'}
+  saHttp.post(saApiEndpoints.echo, testData)
+  .success (d) ->
+    $log.info "Got back result from echo: "+JSON.stringify(d)
+
+  ###
