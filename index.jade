@@ -26,7 +26,10 @@ html
     - var controllers = ['main', 'test', 'home']
     - controllers.forEach( function(v,i,arr) { arr[i] = 'controllers/' + v })
 
-    - var local = core.concat(controllers)
+    - var services = ['api']
+    - services.forEach( function(v,i,arr) { arr[i] = 'services/' + v })
+
+    - var local = core.concat(controllers, services)
 
     - var css = ['style']
     each file in css

@@ -1,9 +1,12 @@
 angular.module('shuttleApp',
   [
     'ui.bootstrap', 'ui.router', 'ngAside', 'ngAnimate', 'toastr',
-    'shuttleApp.controllers'
+    'shuttleApp.controllers', 'shuttleApp.services'
   ]
-).config ($stateProvider, toastrConfig) ->
+).config ($stateProvider, toastrConfig, saApiEndpointsProvider) ->
+  # Configure local or external api
+  saApiEndpointsProvider.useLocalHost(true)
+
   # Configure the global toastr defaults
   angular.extend(toastrConfig,
     autoDismiss: true
