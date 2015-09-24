@@ -1,18 +1,29 @@
 form
-.form-group.row.m-b-0.text-center
-  .col-sm-4.col-xs-8
-    select(ng-options="player.name group by player.parish for player in player_list" ng-model='p1').form-control
-  label.col-xs-4.hidden-sm-up.text-muted {{ p1.parish }}
+  fieldset.form-group.row.hidden-xs-down.m-b-0
+    .col-sm-4.text-right
+      span.text-muted {{ p1.parish }}
+    .col-sm-offset-1.col-sm-4.text-left
+      span.text-muted {{ p2.parish }}
 
-  span.col-sm-1.col-xs-12 vs
+  fieldset.form-group.row.text-center(ng-disabled='played || !editting')
+    .col-sm-4.col-xs-8
+      select(ng-options="player.name group by player.parish for player in player_list" ng-model='p1').form-control
+    label.col-xs-4.hidden-sm-up.text-muted {{ p1.parish }}
 
-  .col-sm-4.col-xs-8
-    select(ng-options="player.name group by player.parish for player in filtered(p1)" ng-model='p2').form-control
-  label.col-xs-4.hidden-sm-up.text-muted {{ p2.parish }}
+    span.col-sm-1.col-xs-12 vs
 
-.form-group.row.p-t-0.hidden-xs-down
-  .col-sm-4.text-right
-    span.text-muted {{ p1.parish }}
-  .col-sm-offset-1.col-sm-4.text-left
-    span.text-muted {{ p2.parish }}
+    .col-sm-4.col-xs-8
+      select(ng-options="player.name group by player.parish for player in filtered(p1)" ng-model='p2').form-control
+    label.col-xs-4.hidden-sm-up.text-muted {{ p2.parish }}
+
+    // Tags
+    .col-sm-1.col-xs-6.text-info(ng-if='!editting && !played' ng-click='edit(true)')
+      i.fa.fa-2x.fa-pencil-square-o
+
+    .col-sm-1.col-xs-6.text-success(ng-if='editting && !played' ng-click='edit(false)')
+      i.fa.fa-2x.fa-check-square
+
+    .col-sm-1.col-xs-6.text-success(ng-if='!editting && !played')
+      i.fa.fa-2x.fa-play
+
 

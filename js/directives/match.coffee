@@ -2,7 +2,12 @@ angular.module 'shuttleApp.directives', []
 .directive 'saMatch', () ->
   restrict: 'E'
   templateUrl: 'templates/directives/dir_match.html'
-  controller: ($scope) ->
+  controller: ($scope, $log) ->
+    $scope.editting = true
+    $scope.played = false
+    $scope.edit = (b) -> $scope.editting = Boolean(b)
+    $scope.clickTest = () ->
+      $log.info "clicked...."
     $scope.player_list = [
       {name: "Anish George", parish: "Defence Colony"},
       {name: "Jibin George", parish: "Defence Colony"},

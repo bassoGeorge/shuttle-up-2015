@@ -1,16 +1,21 @@
 
-<form></form>
-<div class="form-group row m-b-0 text-center">
-  <div class="col-sm-4 col-xs-8">
-    <select ng-options="player.name group by player.parish for player in player_list" ng-model="p1" class="form-control"></select>
-  </div>
-  <label class="col-xs-4 hidden-sm-up text-muted">{{ p1.parish }}</label><span class="col-sm-1 col-xs-12">vs</span>
-  <div class="col-sm-4 col-xs-8">
-    <select ng-options="player.name group by player.parish for player in filtered(p1)" ng-model="p2" class="form-control"></select>
-  </div>
-  <label class="col-xs-4 hidden-sm-up text-muted">{{ p2.parish }}</label>
-</div>
-<div class="form-group row p-t-0 hidden-xs-down">
-  <div class="col-sm-4 text-right"><span class="text-muted">{{ p1.parish }}</span></div>
-  <div class="col-sm-offset-1 col-sm-4 text-left"><span class="text-muted">{{ p2.parish }}</span></div>
-</div>
+<form>
+  <fieldset class="form-group row hidden-xs-down m-b-0">
+    <div class="col-sm-4 text-right"><span class="text-muted">{{ p1.parish }}</span></div>
+    <div class="col-sm-offset-1 col-sm-4 text-left"><span class="text-muted">{{ p2.parish }}</span></div>
+  </fieldset>
+  <fieldset ng-disabled="played || !editting" class="form-group row text-center">
+    <div class="col-sm-4 col-xs-8">
+      <select ng-options="player.name group by player.parish for player in player_list" ng-model="p1" class="form-control"></select>
+    </div>
+    <label class="col-xs-4 hidden-sm-up text-muted">{{ p1.parish }}</label><span class="col-sm-1 col-xs-12">vs</span>
+    <div class="col-sm-4 col-xs-8">
+      <select ng-options="player.name group by player.parish for player in filtered(p1)" ng-model="p2" class="form-control"></select>
+    </div>
+    <label class="col-xs-4 hidden-sm-up text-muted">{{ p2.parish }}</label>
+    <!-- Tags-->
+    <div ng-if="!editting &amp;&amp; !played" ng-click="edit(true)" class="col-sm-1 col-xs-6 text-info"><i class="fa fa-2x fa-pencil-square-o"></i></div>
+    <div ng-if="editting &amp;&amp; !played" ng-click="edit(false)" class="col-sm-1 col-xs-6 text-success"><i class="fa fa-2x fa-check-square"></i></div>
+    <div ng-if="!editting &amp;&amp; !played" class="col-sm-1 col-xs-6 text-success"><i class="fa fa-2x fa-play"></i></div>
+  </fieldset>
+</form>
