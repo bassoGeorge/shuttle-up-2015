@@ -1,7 +1,7 @@
 .modal-header
   button.close(ng-click='$dismiss()')
     span &times
-  h5.modal-title Administration Menu
+  h5.modal-title Menu
 .modal-body
   ul.nav.nav-pills.nav-stacked
     li.nav-item(
@@ -13,3 +13,18 @@
       a.nav-link(
         ng-class="(route[1] | includedByState) ? 'active': ' '"
        ) {{ route[0] }}
+.modal-footer
+  ul.list-unstyled
+    li.text-muted Signed in as&nbsp
+      strong {{username()}}
+    li
+      a(ng-click='logout(); $dismiss()')
+        i.fa.fa-sign-out.fa-fw.fa-lg
+        | &nbspsign-out
+  //
+    p Signed in as &nbsp
+      strong {{username()}}
+    p
+      a(ng-click='logout(); $dismiss()')
+        i.fa.fa-sign-out
+        | &nbspsign-out

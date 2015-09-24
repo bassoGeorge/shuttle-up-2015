@@ -11,12 +11,11 @@ angular.module 'shuttleApp.controllers', []
     )
 
   $scope.isLoggedIn = () -> saUserCreds.isLoggedIn()
-  $scope.username = () -> saUserCreds.username()
 
-  $scope.logout = () -> saUserCreds.logout()
-
-.controller 'SideMenuController', ($scope) ->
+.controller 'SideMenuController', ($scope, saUserCreds) ->
   $scope.routes = [
     ['Home', 'home', 'home.about'],
     ['Registration', 'register', 'register']
   ]
+  $scope.username = () -> saUserCreds.username()
+  $scope.logout = () -> saUserCreds.logout()

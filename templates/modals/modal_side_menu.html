@@ -1,7 +1,7 @@
 
 <div class="modal-header">
   <button ng-click="$dismiss()" class="close"><span>&times</span></button>
-  <h5 class="modal-title">Administration Menu</h5>
+  <h5 class="modal-title">Menu</h5>
 </div>
 <div class="modal-body">
   <ul class="nav nav-pills nav-stacked">
@@ -9,4 +9,18 @@
       <!-- ng-class='{active: isState(route[1])}'--><a ng-class="(route[1] | includedByState) ? 'active': ' '" class="nav-link">{{ route[0] }}</a>
     </li>
   </ul>
+</div>
+<div class="modal-footer">
+  <ul class="list-unstyled">
+    <li class="text-muted">Signed in as&nbsp<strong>{{username()}}</strong></li>
+    <li><a ng-click="logout(); $dismiss()"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbspsign-out</a></li>
+  </ul>
+  <!--
+  p Signed in as &nbsp
+    strong {{username()}}
+  p
+    a(ng-click='logout(); $dismiss()')
+      i.fa.fa-sign-out
+      | &nbspsign-out
+  -->
 </div>

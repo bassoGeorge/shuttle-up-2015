@@ -33,11 +33,14 @@
     <div id="wrap">
       <div ng-if="isLoggedIn()" class="navbar navbar-dark bg-inverse navbar-fixed-top text-center">
         <button ng-click="openSideMenu()" class="navbar-toggler pull-left"><i class="fa fa-bars"></i></button>
-        <ul class="nav navbar-nav pull-right">
-          <li class="nav-item dropdown"><span data-toggle="dropdown" class="nav-link dropdown-toggle">Logged in as {{ username() }}</span>
-            <div class="dropdown-menu"><a ng-click="logout()" class="dropdown-item">Logout</a></div>
-          </li>
-        </ul>
+        <!--
+        ul.nav.navbar-nav.pull-right
+          li.nav-item.dropdown
+            span.nav-link.dropdown-toggle(data-toggle="dropdown") Logged in as {{ username() }}
+            .dropdown-menu
+              a.dropdown-item(ng-click='logout()') Logout
+        
+        -->
       </div>
       <div class="jumbotron jumbotron-fluid text-center">
         <h4 class="text-muted">St. Luke's Youth Group presents</h4>
@@ -45,7 +48,7 @@
         <hr class="jumbotron-hr">
         <h5 class="text-muted">Coming soon...</h5>
         <p class="text-warning"><i class="fa fa-exclamation-triangle"></i>&nbspThis site is a work in progress&nbsp<i class="fa fa-exclamation-triangle"></i></p>
-        <button ng-if="&quot;home&quot; | includedByState" ui-sref="register" class="btn btn-primary">Register Now</button>
+        <button ng-if="&quot;home&quot; | includedByState" ui-sref="register" class="btn btn-primary btn-lg">Register Now</button>
       </div>
       <div class="container">
         <ui-view></ui-view>

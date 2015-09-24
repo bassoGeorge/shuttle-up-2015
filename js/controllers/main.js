@@ -9,17 +9,17 @@
         controller: 'SideMenuController'
       });
     };
-    $scope.isLoggedIn = function() {
+    return $scope.isLoggedIn = function() {
       return saUserCreds.isLoggedIn();
     };
+  }).controller('SideMenuController', function($scope, saUserCreds) {
+    $scope.routes = [['Home', 'home', 'home.about'], ['Registration', 'register', 'register']];
     $scope.username = function() {
       return saUserCreds.username();
     };
     return $scope.logout = function() {
       return saUserCreds.logout();
     };
-  }).controller('SideMenuController', function($scope) {
-    return $scope.routes = [['Home', 'home', 'home.about'], ['Registration', 'register', 'register']];
   });
 
 }).call(this);
