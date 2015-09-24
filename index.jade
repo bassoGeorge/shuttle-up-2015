@@ -6,7 +6,7 @@ html
 
     // Library scripts
     - var core_scripts = ['jquery/dist/jquery.min', 'angular/angular.min']
-    - var files1 = ['bootstrap/dist/js/bootstrap.min']
+    - var files1 = ['bootstrap/dist/js/bootstrap.min', 'underscore/underscore-min']
     - var files2 = ['angular-ui-router/release/angular-ui-router.min', 'angular-animate/angular-animate.min']
     - var files3 = ['angular-bootstrap/ui-bootstrap-tpls.min', 'angular-aside/dist/js/angular-aside.min', 'angular-toastr/dist/angular-toastr.tpls.min']
     - var files = files1.concat(files2, files3)
@@ -34,7 +34,10 @@ html
     - var services = ['core', 'utilities']
     - services.forEach( function(v,i,arr) { arr[i] = 'services/' + v })
 
-    - var local = core.concat(controllers, services)
+    - var directives = ['match']
+    - directives.forEach( function(v,i,arr) { arr[i] = 'directives/' + v })
+
+    - var local = core.concat(controllers, services, directives)
     each file in local
       script(src='js/'+file+'.js' defer)
 

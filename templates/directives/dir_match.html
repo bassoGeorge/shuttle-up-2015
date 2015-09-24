@@ -1,0 +1,16 @@
+
+<form></form>
+<div class="form-group row m-b-0 text-center">
+  <div class="col-sm-4 col-xs-8">
+    <select ng-options="player.name group by player.parish for player in player_list" ng-model="p1" class="form-control"></select>
+  </div>
+  <label class="col-xs-4 hidden-sm-up text-muted">{{ p1.parish }}</label><span class="col-sm-1 col-xs-12">vs</span>
+  <div class="col-sm-4 col-xs-8">
+    <select ng-options="player.name group by player.parish for player in filtered(p1)" ng-model="p2" class="form-control"></select>
+  </div>
+  <label class="col-xs-4 hidden-sm-up text-muted">{{ p2.parish }}</label>
+</div>
+<div class="form-group row p-t-0 hidden-xs-down">
+  <div class="col-sm-4 text-right"><span class="text-muted">{{ p1.parish }}</span></div>
+  <div class="col-sm-offset-1 col-sm-4 text-left"><span class="text-muted">{{ p2.parish }}</span></div>
+</div>

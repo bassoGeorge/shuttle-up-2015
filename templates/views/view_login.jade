@@ -2,17 +2,17 @@
   .col-xs-12.col-md-offset-2.col-md-8
     form(name='loginForm')
       .form-group.row
-        label.form-control-label.col-xs-4.col-sm-2 Username
-        .col-xs-8.col-sm-10
+        label.form-control-label.col-sm-2 Username
+        .col-sm-10
           input.form-control(type='text' name='username' ng-model='username' required)
       .form-group.row
-        label.from-control-label.col-xs-4.col-sm-2 Password
-        .col-xs-8.col-sm-10
+        label.from-control-label.col-sm-2 Password
+        .col-sm-10
           input.form-control(type='password' name='password' ng-model='password' required)
 
       .form-group.row
-        .col-xs-offset-4.col-xs-4.col-sm-offset-6.col-sm-3
+        .col-xs-6.col-sm-offset-6.col-sm-3
           button.btn.btn-block.btn-secondary(ui-sref='home.about') Cancel
-        .col-xs-4.col-sm-3.p-l-0
+        .col-xs-6.col-sm-3.p-l-0
           button.btn.btn-block.btn-primary(ng-click='submit()' ng-disabled='!loginForm.$valid') Login
 

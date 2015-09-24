@@ -1,7 +1,7 @@
 angular.module('shuttleApp',
   [
     'ui.bootstrap', 'ui.router', 'ngAside', 'ngAnimate', 'toastr',
-    'shuttleApp.controllers', 'shuttleApp.services'
+    'shuttleApp.controllers', 'shuttleApp.services', 'shuttleApp.directives'
   ]
 ).config ($stateProvider, toastrConfig, saApiEndpointsProvider) ->
   # Configure local or external api
