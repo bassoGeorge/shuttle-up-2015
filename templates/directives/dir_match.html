@@ -26,6 +26,9 @@
     <div ng-if="editting &amp;&amp; !played" class="col-xs-2">
       <button ng-click="edit(false)" class="btn btn-success-outline btn-block"><i class="fa fa-check"></i></button>
     </div>
+    <div ng-if="editting &amp;&amp; !played" class="col-xs-2">
+      <button ng-click="edit(false)" class="btn btn-warning-outline btn-block"><i class="fa fa-times"></i></button>
+    </div>
     <div ng-if="!editting &amp;&amp; !played" class="col-xs-2">
       <button class="btn btn-primary-outline btn-block"><i class="fa fa-play"></i></button>
     </div>

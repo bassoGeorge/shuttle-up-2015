@@ -27,6 +27,10 @@ form(name='matchForm')
       button.btn.btn-success-outline.btn-block( ng-click='edit(false)')
         i.fa.fa-check
 
+    .col-xs-2(ng-if='editting && !played')
+      button.btn.btn-warning-outline.btn-block( ng-click='edit(false)')
+        i.fa.fa-times
+
     .col-xs-2(ng-if='!editting && !played')
       button.btn.btn-primary-outline.btn-block
         i.fa.fa-play
