@@ -1,4 +1,4 @@
-form(name='matchForm')
+form(name='matchForm' action='#')
   fieldset.form-group.row.hidden-xs-down.m-b-0
     label.col-sm-5.text-right.text-muted.form-control-label {{ p1.parish }}
     label.col-sm-offset-2.col-sm-5.text-left.text-muted.form-control-label {{ p2.parish }}
@@ -24,11 +24,11 @@ form(name='matchForm')
         i.fa.fa-pencil
 
     .col-xs-2(ng-if='editting && !played')
-      button.btn.btn-success-outline.btn-block( ng-click='edit(false)')
+      button.btn.btn-success-outline.btn-block( ng-click='submit()')
         i.fa.fa-check
 
     .col-xs-2(ng-if='editting && !played')
-      button.btn.btn-warning-outline.btn-block( ng-click='edit(false)')
+      button.btn.btn-warning-outline.btn-block( ng-click='reset(); edit(false)')
         i.fa.fa-times
 
     .col-xs-2(ng-if='!editting && !played')

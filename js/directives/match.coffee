@@ -6,8 +6,6 @@ angular.module 'shuttleApp.directives', []
     $scope.editting = true
     $scope.played = false
 
-    $scope.edit = (b) ->
-      $scope.editting = Boolean(b)
     $scope.player_list = [
       {name: "Anish George", parish: "Defence Colony"},
       {name: "Jibin George", parish: "Defence Colony"},
@@ -18,6 +16,28 @@ angular.module 'shuttleApp.directives', []
       {name: "Abhilash Verghese", parish: "Okhla"},
       {name: "Stuti crazy", parish: "Okhla"},
     ]
+
+    storeP1 = $scope.player_list[0]
+
+    if $scope.player_list.length > 1
+      storeP2 = $scope.player_list[1]
+    else storeP2 = null
+
+    $scope.reset = () ->
+      $scope.p1 = storeP1
+      $scope.p2 = storeP2
+
+    $scope.reset()
+
+
+    $scope.edit = (b) -> $scope.editting = Boolean(b)
+    $scope.submit = () ->
+      if $scope.matchForm.$valid
+        $log.info "Valid form, submitting"    # Todo, submit function
+        storeP1 = $scope.p1
+        storeP2 = $scope.p2
+        $scope.editting = false
+
 
     $scope.filtered = (player) ->
       # $scope.player_list

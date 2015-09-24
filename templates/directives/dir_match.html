@@ -1,5 +1,5 @@
 
-<form name="matchForm">
+<form name="matchForm" action="#">
   <fieldset class="form-group row hidden-xs-down m-b-0">
     <label class="col-sm-5 text-right text-muted form-control-label">{{ p1.parish }}</label>
     <label class="col-sm-offset-2 col-sm-5 text-left text-muted form-control-label">{{ p2.parish }}</label>
@@ -24,10 +24,10 @@
       <button ng-click="edit(true)" class="btn btn-info-outline btn-block"><i class="fa fa-pencil"></i></button>
     </div>
     <div ng-if="editting &amp;&amp; !played" class="col-xs-2">
-      <button ng-click="edit(false)" class="btn btn-success-outline btn-block"><i class="fa fa-check"></i></button>
+      <button ng-click="submit()" class="btn btn-success-outline btn-block"><i class="fa fa-check"></i></button>
     </div>
     <div ng-if="editting &amp;&amp; !played" class="col-xs-2">
-      <button ng-click="edit(false)" class="btn btn-warning-outline btn-block"><i class="fa fa-times"></i></button>
+      <button ng-click="reset(); edit(false)" class="btn btn-warning-outline btn-block"><i class="fa fa-times"></i></button>
     </div>
     <div ng-if="!editting &amp;&amp; !played" class="col-xs-2">
       <button class="btn btn-primary-outline btn-block"><i class="fa fa-play"></i></button>

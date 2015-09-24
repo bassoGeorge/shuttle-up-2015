@@ -5,11 +5,9 @@
       restrict: 'E',
       templateUrl: 'templates/directives/dir_match.html',
       controller: function($scope, $log) {
+        var storeP1, storeP2;
         $scope.editting = true;
         $scope.played = false;
-        $scope.edit = function(b) {
-          return $scope.editting = Boolean(b);
-        };
         $scope.player_list = [
           {
             name: "Anish George",
@@ -37,6 +35,28 @@
             parish: "Okhla"
           }
         ];
+        storeP1 = $scope.player_list[0];
+        if ($scope.player_list.length > 1) {
+          storeP2 = $scope.player_list[1];
+        } else {
+          storeP2 = null;
+        }
+        $scope.reset = function() {
+          $scope.p1 = storeP1;
+          return $scope.p2 = storeP2;
+        };
+        $scope.reset();
+        $scope.edit = function(b) {
+          return $scope.editting = Boolean(b);
+        };
+        $scope.submit = function() {
+          if ($scope.matchForm.$valid) {
+            $log.info("Valid form, submitting");
+            storeP1 = $scope.p1;
+            storeP2 = $scope.p2;
+            return $scope.editting = false;
+          }
+        };
         return $scope.filtered = function(player) {
           return _.without($scope.player_list, player);
         };
