@@ -5,8 +5,8 @@
 </div>
 <div class="modal-body">
   <ul class="nav nav-pills nav-stacked">
-    <li ng-repeat="route in routes" ng-click="$dismiss()" ui-sref="{{ route[2] }}" class="nav-item">
-      <!-- ng-class='{active: isState(route[1])}'--><a ng-class="(route[1] | includedByState) ? 'active': ' '" class="nav-link">{{ route[0] }}</a>
+    <li ng-repeat="route in routes" ng-click="$dismiss()" ui-sref="{{:: route[2] }}" class="nav-item">
+      <!-- ng-class='{active: isState(route[1])}'--><a ng-class="(route[1] | includedByState) ? 'active': ' '" class="nav-link">{{:: route[0] }}</a>
     </li>
   </ul>
 </div>
@@ -15,12 +15,4 @@
     <li class="text-muted">Signed in as&nbsp<strong>{{username()}}</strong></li>
     <li><a ng-click="logout(); $dismiss()"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbspsign-out</a></li>
   </ul>
-  <!--
-  p Signed in as &nbsp
-    strong {{username()}}
-  p
-    a(ng-click='logout(); $dismiss()')
-      i.fa.fa-sign-out
-      | &nbspsign-out
-  -->
 </div>

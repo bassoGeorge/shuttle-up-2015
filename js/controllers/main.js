@@ -2,17 +2,10 @@
 (function() {
   angular.module('shuttleApp.controllers', []).controller('MainController', function($scope, $aside, $state, saUserCreds, $log) {
     $scope.openSideMenu = function() {
-      var size;
-      $log.debug("Width of viewport: " + ($(window).width()));
-      if ($(window).width() > 600) {
-        size = 'sm';
-      } else {
-        size = 'md';
-      }
       return $aside.open({
         templateUrl: 'templates/modals/modal_side_menu.html',
         placement: 'left',
-        size: size,
+        size: 'sm',
         controller: 'SideMenuController'
       });
     };

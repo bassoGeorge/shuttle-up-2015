@@ -3,15 +3,10 @@ angular.module 'shuttleApp.controllers', []
 
   # Simple function to open the side menu
   $scope.openSideMenu = () ->
-    $log.debug "Width of viewport: #{$(window).width()}"
-    if $(window).width() > 600
-      size = 'sm'
-    else
-      size = 'md'
     $aside.open(
       templateUrl: 'templates/modals/modal_side_menu.html'
       placement: 'left'
-      size: size
+      size: 'sm'
       controller: 'SideMenuController'
     )
 
