@@ -5,9 +5,9 @@ angular.module 'shuttleApp.directives', []
   controller: ($scope, $log) ->
     $scope.editting = true
     $scope.played = false
-    $scope.edit = (b) -> $scope.editting = Boolean(b)
-    $scope.clickTest = () ->
-      $log.info "clicked...."
+
+    $scope.edit = (b) ->
+      $scope.editting = Boolean(b)
     $scope.player_list = [
       {name: "Anish George", parish: "Defence Colony"},
       {name: "Jibin George", parish: "Defence Colony"},

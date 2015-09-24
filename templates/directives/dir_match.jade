@@ -1,29 +1,32 @@
 form
   fieldset.form-group.row.hidden-xs-down.m-b-0
-    .col-sm-4.text-right
-      span.text-muted {{ p1.parish }}
-    .col-sm-offset-1.col-sm-4.text-left
-      span.text-muted {{ p2.parish }}
+    label.col-sm-5.text-right.text-muted.form-control-label {{ p1.parish }}
+    label.col-sm-offset-2.col-sm-5.text-left.text-muted.form-control-label {{ p2.parish }}
 
   fieldset.form-group.row.text-center(ng-disabled='played || !editting')
-    .col-sm-4.col-xs-8
-      select(ng-options="player.name group by player.parish for player in player_list" ng-model='p1').form-control
+    .col-sm-5.col-xs-8
+      select.form-control.c-select(ng-options="player.name group by player.parish for player in player_list" ng-model='p1')
     label.col-xs-4.hidden-sm-up.text-muted {{ p1.parish }}
 
-    span.col-sm-1.col-xs-12 vs
+    label.form-control-label.col-sm-2.col-xs-12 vs
 
-    .col-sm-4.col-xs-8
-      select(ng-options="player.name group by player.parish for player in filtered(p1)" ng-model='p2').form-control
+    .col-sm-5.col-xs-8
+      select.form-control.c-select(ng-options="player.name group by player.parish for player in filtered(p1)" ng-model='p2')
     label.col-xs-4.hidden-sm-up.text-muted {{ p2.parish }}
 
+  fieldset.form-group.row.text-center
+    .col-md-offset-2.col-md-4.col-xs-8
+      input.form-control.custom-date(ng-disabled='played || !editting' type='datetime-local' ng-model='date' placeholder='Scheduled date time')
+
     // Tags
-    .col-sm-1.col-xs-6.text-info(ng-if='!editting && !played' ng-click='edit(true)')
-      i.fa.fa-2x.fa-pencil-square-o
+    .col-xs-2(ng-if='!editting && !played')
+      button.btn.btn-info-outline.btn-block( ng-click='edit(true)')
+        i.fa.fa-pencil
 
-    .col-sm-1.col-xs-6.text-success(ng-if='editting && !played' ng-click='edit(false)')
-      i.fa.fa-2x.fa-check-square
+    .col-xs-2(ng-if='editting && !played')
+      button.btn.btn-success-outline.btn-block( ng-click='edit(false)')
+        i.fa.fa-check
 
-    .col-sm-1.col-xs-6.text-success(ng-if='!editting && !played')
-      i.fa.fa-2x.fa-play
-
-
+    .col-xs-2(ng-if='!editting && !played')
+      button.btn.btn-primary-outline.btn-block
+        i.fa.fa-play

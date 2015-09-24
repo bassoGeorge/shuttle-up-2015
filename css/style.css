@@ -27,6 +27,6 @@ body {
     display: inline-block;
 }
 
-fieldset.custom-fieldset {
-    margin-bottom: 8px !important;
+.custom-date {
+    height: 38px !important;
 }

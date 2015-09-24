@@ -10,9 +10,6 @@
         $scope.edit = function(b) {
           return $scope.editting = Boolean(b);
         };
-        $scope.clickTest = function() {
-          return $log.info("clicked....");
-        };
         $scope.player_list = [
           {
             name: "Anish George",
