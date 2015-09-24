@@ -2,7 +2,11 @@
 (function() {
   var indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-  angular.module('shuttleApp.services').factory('saHttp', function($http) {
+  angular.module('shuttleApp.services').factory('saEncPass', function() {
+    return function(password) {
+      return CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
+    };
+  }).factory('saHttp', function($http) {
     var apiKey;
     apiKey = '';
     return {
@@ -32,4 +36,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=http.js.map
+//# sourceMappingURL=utilities.js.map
